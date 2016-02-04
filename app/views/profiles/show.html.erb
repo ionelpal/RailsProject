@@ -1,0 +1,41 @@
+
+
+
+
+
+<div style="width:200px; height:200px; background:#f5f5f5; margin:20px auto; padding:20px;" class=" text-center ">
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @profile.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @profile.lastname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @profile.mobile %>
+</p>
+</div>
+
+
+<div class="text-center">
+
+
+
+
+<%= link_to 'Create Profile', items_path, :class => "btn btn-default active   space btn-xs" %>
+
+
+</div>

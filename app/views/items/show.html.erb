@@ -1,0 +1,56 @@
+<div class="row"> 
+  <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="solid_line" style="padding:20px;">   
+            <br/>     
+            <div class = "pull-left img-rounded disab"> <%= image_tag @item.img_url_big, height: "330", width:"140" %></div>
+         
+
+            <div class="name"><%= @item.name %><br/>
+            </div>
+
+            <div class="description text-muted center-block "><%= @item.description %> <br/><br/>
+            </div>
+          
+            <div class="price text-center"> <span style="color:#ca1e03">Price</span> <%= number_to_currency(@item.price) %><br/><br/>
+            </div>
+             <% if current_user.admin? %>
+          
+         <div><%= link_to 'Edit', edit_item_path,:class => "btn btn-danger active btn-sm" %>
+           
+         <%= link_to 'Destroy', @item, :confirm => 'Are you sure?', :method => :delete ,:class => "btn btn-danger active btn-sm"%></div>
+         
+          <% end %>
+
+
+             <% if user_signed_in? & !current_user.admin?%>
+            <div class="text-center">
+     <a href="/cart/<%= @item.id %>"> <span class="cart"><button type="button" class="btn btn-warning btn-sm">Add to Cart</button></span></a>
+  
+      <% end %>
+
+<br/>
+      
+          </div>
+
+            <br/>
+        <div>
+      
+      <%= link_to 'Product Review', reviews_path(id: @item.id), :class => "btn btn-warning active space btn-xs" %>
+      
+
+      <%= link_to 'Add new Review', new_review_path(id: @item.id, name: @item.name),:class => "btn btn-warning active space btn-xs"%>
+
+        <%= link_to 'Return', items_path, :class => "btn btn-warning active btn-xs space" %>
+        <br/><br/>
+        </div>
+        
+        <br/>
+        
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+

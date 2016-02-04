@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wine Online from Balbriggan</title><br/>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="back_img"> 
+<div class="container " style="background-color:white;">
+	
+  <%= render 'layouts/header' %>
+	
+   <div class="row solid_line ">
+      <div class="col-md-6" >      
+        <span class="notice text-muted"><%= notice %></span>
+		    <span class="alert text-danger"><%= alert %></span>
+		  </div>
+
+    <div class="col-md-6" > 
+        <% if user_signed_in? %>
+          <div><span class="text-success">Signed in as:&nbsp; </span><span class="text-danger"> <%= current_user.email %></span> <br/><span class="pull-right"><%= link_to 'SignOut', destroy_user_session_path, :method => :delete, :class => "glyphicon glyphicon-log-in text-success sign" %></span>
+          </div>
+          <% else %> 
+  	     <div><span class="pull-right"> <%= link_to 'Register', new_user_registration_path, class: "glyphicon glyphicon-user text-success"%>
+               &nbsp;&nbsp;&nbsp;<%= link_to 'SignIn', new_user_session_path ,class: "glyphicon glyphicon-user text-success" %></span>
+          </div>
+      <% end %>
+    </div>
+</div><!-- end row-->
+<%= yield %><br/>
+
+
+  <%= render 'layouts/footer' %>
+</div><!--end containe-->
+</body>
+</html>
+                            

@@ -1,0 +1,52 @@
+<div class="row"> 
+  <div class="col-md-3"></div>
+      <div class="col-md-6"><br/>
+
+
+
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field" style="display:none">
+    <%= f.label :user_id,"User Id" %><br>
+    <%= f.text_field :user_id, :required => true %>
+  </div>
+  
+  
+
+
+  <div class="field" style="display:none">
+    <%= f.label :productname,"Wine Name"%><br>
+    <%= f.text_field :productname , :required => true , :class => "input_n"%>
+  </div>
+
+
+  <div class="field" >
+    <%= f.label:reviwtext ,"Your Review"%><br>
+    <%= f.text_area :reviwtext , :required => true%>
+  </div>
+  <div class="field">
+    <%= f.label :itemrate, "Satisfaction Rate" %><br>
+    <%= f.number_field :itemrate, :required => true , :class => "input_f", min: "1" , max:"5" %>
+  </div>
+
+
+
+  <div class="actions">
+ <%= f.submit "Submit", class: "btn btn-warning active btn-xs" %>
+  </div>
+<% end %>
+
+
+</div>
+</div>

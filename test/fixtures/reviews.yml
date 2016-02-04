@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  productname: MyString
+  reviwtext: MyText
+  itemrate: 1
+
+two:
+  productname: MyString
+  reviwtext: MyText
+  itemrate: 1

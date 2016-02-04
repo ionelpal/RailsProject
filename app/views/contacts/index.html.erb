@@ -1,0 +1,50 @@
+<div class="row"> 
+  <div class="col-md-1"></div>
+   <div class="col-md-10">
+<br/>
+<h4 class="text-center"><mark>Message Listing</mark></h4><br/>
+<br/>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Emaill Address</th>
+      <th>Phone</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.firstname %></td>
+        <td><%= contact.lastname %></td>
+        <td><%= contact.emaill %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.message %></td>
+        <% if current_user.admin? %>
+        <td><%= link_to 'Show', contact , :class => "btn btn-default active  space btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) , :class => "btn btn-warning active  space btn-xs" %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-danger active  space btn-xs" %></td>
+        
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+<br>
+
+
+
+
+</div>
+<div class="col-md-1"></div>
+</div>

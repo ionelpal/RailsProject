@@ -1,0 +1,46 @@
+<div class="row"> 
+  <div class="col-md-1"></div>
+      <div class="col-md-8">
+
+          <%@items.each do |item| %> 
+        
+              <div class="solid_line">        
+          <div class = "pull-left img-rounded item title disab"> <%= link_to(image_tag(item.image_ur, height: "170", width:"170"),item)%></div>
+        
+
+          <div class="name"><%= item.name %><br/></div>
+          <div class="description text-muted center-block "><%= item.description %> 
+
+          <%= link_to 'More information...', item, :class => "text-danger" %><br/><br/> </div>
+                                                
+          <div class="price"> <span style="color:#ca1e03">Price</span> <%= number_to_currency(item.price) %><br/></div>
+        <% if current_user.admin? %>
+         <div><%= link_to 'Show', item ,:class => "btn btn-warning  btn-sm"%></div>
+          <% end %>
+
+            <% if user_signed_in? & !current_user.admin?%>
+            <a href="/cart/<%= item.id %>"><div class="cart"><button type="button" class="btn btn-warning btn-sm">Add to Cart</button></a><br></div>
+
+           
+            
+          <% end %>
+
+                <div class="clearfix"></div>
+     </div>
+          <% end %> 
+
+</div>
+<% if current_user.admin? %>
+    <div class="col-md-2"><br/><br/>
+    <p class="text-danger">Add new item?</p>    
+    <div><%= link_to 'New Item', new_item_path, :class => "btn btn-warning active " %></a> </div>
+    <% end -%>
+</div>
+
+    
+      
+      
+  
+       
+
+ 

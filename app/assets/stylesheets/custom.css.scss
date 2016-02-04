@@ -1,0 +1,153 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*style custom*/
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight:normal; 
+    margin:0; 
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.back_img{
+	background-image:url("bg-body.png");
+	//background-repeat:repeat-x;
+}
+
+body {
+
+	padding: 0;
+	margin: 0px;
+    background:#ffffff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+    
+.custom_cont{
+	width: 970px;
+	margin: 0 auto;
+}
+
+
+#logo{
+	
+	margin-top: 5px;
+	margin-left: -10px;
+}
+
+#header{
+margin-top:10px;
+ background: #F9F7F0;
+ border: none;
+}
+#colButton{
+	background: #969589; 
+	border: none;
+}
+
+.navbar ul li a:hover{
+    
+	color:#43413c !important;
+	
+}
+
+a:hover{
+    
+	color:#43413c !important;
+	
+}
+
+.item{
+	 height: 220px;
+	 margin-top:10px; 
+ //overflow: hidden;
+}
+
+
+.price{
+    font-size:14px;
+   color: #43413c;
+     font-family: Helvetica, Arial, sans-serif;
+      overflow: hidden;
+}
+  
+    
+
+.cart{
+   color: blue;
+}
+
+.description{
+	//width: 450px;
+	hight:auto;
+	 overflow: hidden;
+	  font-size: 11px;
+}
+
+.foot{
+	margin-top: 3px;
+ 	margin:3px 0px 5px 0px;
+  	background: #F9F7F0;
+   	height: 60px; 
+   	padding:10px;
+   	color:#43413c;
+
+
+}
+
+.more_info{
+font-style: normal;
+color: read;
+font-size: 12px;
+}
+
+
+
+.name{
+	color: #999900;
+	font-size:16px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+
+ overflow: hidden;
+}
+
+.hr_line{
+width: 60%;
+float: left;
+} 
+
+.solid_line{
+border:solid 1px  #EEEEEE;
+margin-top: 0px;
+ hight:auto;
+}  
+
+
+.subtitle{
+text-align:center;
+font-size: 14px;
+color: #005156;
+
+}
+
+.space{
+	margin:20px;
+}
+
+.input_f {
+    width: 80px;
+    
+}
+.input_n{
+	width: 350px;
+}
+

@@ -1,0 +1,28 @@
+<div class="row"> 
+  	<div class="col-md-3"></div>
+      <div class="col-md-6"><br/>
+		<span class="text-center"><h4><mark>Wine Review</mark></h4><span><br/>
+
+		<p id="notice"><%= notice %></p>
+
+		<p>
+  		<strong>Wine Name:</strong>
+  		<%= @review.productname %>
+		</p>
+
+	<p>
+  	<strong>Wine Review:</strong>
+  	<%= @review.reviwtext %>
+	</p>
+
+	<p>
+  	<strong>Satisfaction Rate:</strong>
+  	<%= @review.itemrate %>
+	</p><br/>
+	<% if current_user.admin?%>
+	<div ><%= link_to 'Edit', edit_review_path(@review), :class => "btn btn-warning active btn-xs" %>
+	<%end%>
+	<%= link_to 'Return', items_path , :class => "btn btn-warning  active btn-xs pull-right"%><br/><br/>
+	</div>
+	</div>
+</div

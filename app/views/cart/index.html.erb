@@ -1,0 +1,68 @@
+<div class="row"> 
+	<div class="col-md-1"></div>
+	 <div class="col-md-9">
+	 		<br/>
+			<h4 class="text-center"><mark>Your Cart</mark></h4><br/><br/>
+
+			<% if @cart.empty? %>
+			<p class="text-center "><mark>Your Cart is empty!</mark></p>
+			<% end %>
+			<% total = 0 %>
+			<div>
+			<table class="table table-striped table-bordered">
+			<tr>
+			<td class="legend"></td>
+			<td class="legend">Item</td>
+			<td class="legend">Price</td>
+			<td class="legend">Qty</td>
+			<td class="legend">Total</td>
+			</tr>
+			<% @cart.each do | id, quantity | %>
+			<% item = Item.find_by_id(id) %>
+			<tr>
+			<td>
+			<div class="image">
+			<%= link_to (image_tag item.image_ur, :style => "height:60px")%>
+			</div>
+			</td>
+			<td class="title disab"><%= link_to item.name %></td>
+			<td class="price"><%= number_to_currency(item.price) %></td>
+			<td class="quantity"><%= quantity %><br /></td>
+			<td class="price">
+			<%= number_to_currency(quantity * item.price, :unit => "€") %>
+			</td>
+			<td><a href="/cart/remove/<%= item.id %>"><span class=" btn btn-warning btn-xs text-center pull-right">Remove</span></button></a></td>
+			</tr>
+			<% total += quantity * item.price %>
+			<% end %>
+			<tr>
+			<td colspan="4">
+			<div class="total"><mark>Total:</mark></div>
+			</td>
+			<td>
+			<div class="price"><%= number_to_currency(total, :unit => "€") %></div>
+			</td>
+			</tr>
+			</table>
+
+</div><!-- end col-md-9-->
+
+<div class="col-md-2"></div>
+	</div><!-- end raw-->
+	<div class="row"> 
+	<div class="col-md-"></div>
+	<div class="col-md-8">
+		<div class="text-center">
+			
+			<span class="btn btn-default active btn-xs" style="background: #eee"><%= link_to 'Continue Shopping', :controller => :items %></span>
+
+			<span class=" btn btn-default  active btn-xs bg-grey" style="background: #eee"><%= link_to 'Clear Cart', :controller => "cart", :action => "clearCart" %></span>
+
+			<span class=" btn btn-default active btn-xs pull-right" style="background: #eee"><%= link_to 'Check Out', :controller => "cart", :action => "createOrder" %></span>
+			</div>
+			</div>
+
+<div class="col-md-2"></div>
+		</div>
+
+</div><!-- end raw-->

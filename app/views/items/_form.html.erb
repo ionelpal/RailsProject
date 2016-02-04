@@ -1,0 +1,41 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field text-center">
+    <%= f.label :name %><br>
+   <%= f.text_field :name, :required => true %>
+  </div>
+  <div class="field text-center">
+    <%= f.label :price %><br>
+    <%= f.text_field :price ,:required => true%>
+  </div>
+  <div class="field text-center">
+    <%= f.label :description %><br>
+    <%= f.text_area :description ,:required => true%>
+  </div>
+  <div class="field text-center">
+    <%= f.label :image_ur %><br>
+    <%= f.text_field :image_ur ,:required => true%>
+  </div>
+  <div class="field text-center">
+    <%= f.label :img_url_big %><br>
+    <%= f.text_field :img_url_big ,:required => true%>
+  </div>
+  <div class="field text-center">
+    <%= f.label :category %><br>
+    <%= f.text_field :category ,:required => true%>
+  </div>
+  <div class="btn btn-default active  pull-right space btn-xs">
+    <%= f.submit %>
+  </div>
+<% end %>
